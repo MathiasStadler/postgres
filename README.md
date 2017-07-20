@@ -3,6 +3,16 @@
 ```docker build -f 9.4/Dockerfile -t mathiasstadler/postgres:9.4 9.4```
 
 
+# Error
+* under Alpine 3.5
+* ```wget -O postgresql.tar.bz2 https://ftp.postgresql.org/pub/source/v9.4.12/postgresql-9.4.12.tar.bz2
+Connecting to 192.168.178.32:3128 (192.168.178.32:3128)
+wget: error getting response: Connection reset by peer```
+* add in DOCKERFILE 
+	- ```update update-ca-certificates ```
+	- hint from here https://github.com/Yelp/dumb-init/issues/73
+
+
 
 # ------------------------------------------------
 # Orginal Repo README.md  
