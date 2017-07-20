@@ -25,6 +25,9 @@ ENV PG_MAJOR 9.4
 ENV PG_VERSION 9.4.12
 ENV PG_SHA256 fca055481875d1c49e31c28443f56472a1474b3fbe25b7ae64440c6118f82e64
 
+# update-ca-certificates from here
+# https://github.com/Yelp/dumb-init/issues/73
+
 RUN set -ex \
 	\
 	&& apk add --no-cache --virtual .fetch-deps \
@@ -32,6 +35,7 @@ RUN set -ex \
 		openssl \
 		tar \
 	\
+	&& update-ca-certificates \ 
 	&& wget -O postgresql.tar.bz2 "https://ftp.postgresql.org/pub/source/v$PG_VERSION/postgresql-$PG_VERSION.tar.bz2" \
 	&& echo "$PG_SHA256 *postgresql.tar.bz2" | sha256sum -c - \
 	&& mkdir -p /usr/src/postgresql \

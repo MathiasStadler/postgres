@@ -1,3 +1,12 @@
+# Usage
+* build own images
+```docker build -f 9.4/Dockerfile -t mathiasstadler/postgres:9.4 9.4```
+
+
+
+# ------------------------------------------------
+# Orginal Repo README.md  
+
 # About this Repo
 
 This is the Git repo of the Docker [official image](https://docs.docker.com/docker-hub/official_repos/) for [postgres](https://registry.hub.docker.com/_/postgres/). See [the Docker Hub page](https://registry.hub.docker.com/_/postgres/) for the full readme on how to use this Docker image and for information regarding contributing and issues.
